@@ -1,4 +1,4 @@
-[[strip]][[* using strip in stylesheet to remove unneeded empty space, will reduce the file size *]]
+/* [[strip]][[* using strip in stylesheet to remove unneeded empty space, will reduce the file size *]] */
 
 /* Default styles for screens up to 1024px width */
 /* realign logo for mobile devices */
@@ -58,7 +58,7 @@ nav.main-navigation ul ul li {
     height: auto;
     margin: 0;
     padding: 0
-} 
+}
 nav.main-navigation > ul > li li a {
     line-height: 1
 }
@@ -70,7 +70,7 @@ nav.main-navigation > ul > li > ul > li:hover > ul {
 /* close button (appended to dropdown with jquery) */
 .close-button {
     display: block;
-    background: url([[uploads_url]]/simplex/images/close_button.png) no-repeat;
+    background: url(img/simplex/images/close_button.png) no-repeat; /* uploads url */
     text-indent: -999em;
     position: absolute;
     bottom: -5px;
@@ -114,7 +114,7 @@ a.printbutton {
 }
 
 /* =====================================
-Tablet (Portrait) 
+Tablet (Portrait)
 ===================================== */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : portrait) {
     /* realign navigation for mobile devices */
@@ -129,7 +129,7 @@ Tablet (Portrait)
     nav.main-navigation > ul > li > a,
     nav.main-navigation > ul > li.sectionheader > span {
         font-size: 14px
-    } 
+    }
     .header-bottom {
         height: auto;
         line-height: 1.2;
@@ -144,20 +144,20 @@ Tablet (Portrait)
 }
 
 /* =====================================
-Smartphones (Landscape) 
+Smartphones (Landscape)
 ===================================== */
-@media only screen and (min-width: 321px) and (max-width: 767px) { 
+@media only screen and (min-width: 321px) and (max-width: 767px) {
     nav.main-navigation ul li {
         position: static
-    }    
-    nav.main-navigation > ul > li > a.
+    }
+    nav.main-navigation > ul > li > a
     nav.main-navigation > ul > li.sectionheader > span {
         font-size: 10px
     }
 }
 
 /* =====================================
-Smartphones (Portait) 
+Smartphones (Portait)
 ===================================== */
 @media only screen and (max-width: 320px) {
     .logo img {
@@ -171,7 +171,7 @@ Smartphones (Portait)
         top: 58px;
         left: 2%;
         right: auto
-    }    
+    }
     nav.main-navigation ul li {
         float: none;
         position: relative;
@@ -190,13 +190,13 @@ Smartphones (Portait)
         float:none;
         margin: 0 auto;
         width: 100%;
-    }    
+    }
     .search input {
         width: 80%;
         text-align: center;
         padding: 5px 0 3px 0;
         display: block
-    }     
+    }
     /* hiding footer navigation or it is squeezed to much */
     .footer-navigation {
         display: none
@@ -206,4 +206,4 @@ Smartphones (Portait)
     }
 }
 
-[[/strip]]
+/* [[/strip]] */

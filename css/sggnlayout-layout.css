@@ -1,0 +1,880 @@
+/* [[strip]][[* using strip in stylesheet to remove unneeded empty space, will reduce the file size *]]
+
+[[* APPEARANCE *]]
+[[*
+By adding #boxed id to body tag you can easily change appearance of the site.
+This would add a background image to body and content would be wrapped in a box.
+By removing that id the background is removed and site is presented in white.
+
+How: Go to Template -> Simplex and find <body>
+Now simply edit as following <body id='boxed'>
+
+You can as well reposition your site by changing class on wrapping div.
+Find in Simplex Template following:
+
+<div class='container centered' id='wrapper'>
+
+Now change "centered" to "left" or "right" and page will be left or right aligned.
+*]]
+
+[[* assign the images path to a variable *]]
+[[capture assign='path']][[uploads_url]]/sggn-simplex/images[[/capture]]
+
+[[* COLORS *]]
+
+[[assign var='boxed_bg' value="#d1d1d1 url(`$path`/boxed-bg.gif)"]]
+
+[[assign var='light_grey' value='#D0D0D0']]
+[[assign var='grey' value='#9C9C9C']]
+[[assign var='dark_grey' value='#646464']]
+[[assign var='white' value='#fff']]
+[[assign var='blue' value='#00559F']]
+[[assign var='orangered' value='#E95E27']]
+[[assign var='yellow' value='#D0D1D2']]
+*/
+
+/* =====================================
+BASIC STYLES
+===================================== */
+body {
+    background: #FFFFFF; /* [[$white]] */
+    font-family: sans-serif; /* sans-serif falls back to default OS and Browser font, usually Arial or Helvetica and so on */
+    font-size: 100%;
+    color: #646464; /*[[$dark_grey]]*/;
+    line-height: 1.3
+}
+/* you can change appearance of the page by adding or removing #boxed id to body tag. */
+body#boxed {
+    background:  #454545; /*repeat; /* [[$boxed_bg]] */
+}
+/* add some space inside the boxed container */
+#boxed .container {
+    padding: 0 1%
+}
+.container {
+    max-width: 960px;
+}
+a img {
+    border: none
+}
+/* you can use these classes to align images to left or right */
+.right {
+    float: right
+}
+.left {
+    float:left
+}
+/* if image needs some space add this class to img tag
+ * so at the end a left floating image would be <img src='some.jpg' class='left spacing' alt='foo' />
+*/
+.spacing {
+    margin: 10px
+}
+.spacing.left {
+    margin: 10px 10px 10px 0
+}
+.spacing.right {
+    margin: 10px 0 10px 10px
+}
+/* or add a 2 px border to image or something, change as you need it */
+.border {
+    border: 2px solid #9C9C9C; /* [[$grey]] */
+}
+/* some styling for code chunks */
+code, samp, kbd {
+    font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console', 'Lucida Sans Typewriter', monospace;
+    color: #9c9c9c; /*[[$dark_grey]]*/
+}
+pre code {
+    line-height: 1.4;
+    font-size: 11px
+}
+pre {
+    padding: 10px;
+    margin: 10px 0;
+    overflow: auto;
+    width: 93%;
+    background: #D0D0D0 /* [[$light_grey]] */;;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px
+}
+/* target IE7 and IE6 */
+*:first-child+html pre {
+    padding-bottom: 20px;
+    overflow-y: hidden;
+    overflow: visible;
+    overflow-x: auto
+}
+* html pre {
+    padding-bottom: 20px;
+    overflow: visible;
+    overflow-x: auto
+}
+/* horizontal ruler */
+hr {
+    border: solid #9C9C9C; /* [[$grey]] */;
+    border-width: 1px 0 0 0;
+    clear: both;
+    margin: 10px 0 30px 0;
+    height: 0
+}
+/* =====================================
+COMMON TYPOGRAPHY
+===================================== */
+
+/* link default styles */
+a {
+    color: #00559F /* [[$blue]] */;;
+}
+a:visited {
+    color: #E95E27 /* [[$orangered]] */;
+}
+a:hover {
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    transition: transform 0.6s ease-out;
+    -webkit-transition: color 0.6s ease-out;
+    -moz-transition: color 0.6s ease-out;
+    -o-transition: color 0.6s ease-out;
+    text-decoration: underline
+}
+a:focus {
+    outline: thin dotted
+}
+a:hover, a:active {
+    outline: 0
+}
+/* add icon to links with class external */
+a.external span {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    text-indent: -999em;
+    margin: 0 3px;
+    /* using sprite image, but left as reference to single image
+    background: transparent url(img/external-icon.png) no-repeat 0 0
+    */
+    background: transparent url(img/simplex-sprite.png) no-repeat -10px -130px;
+}
+a.external:hover span {
+    background-position: -10px -139px
+}
+/* default heading styles */
+h1,
+h2,
+h3 {
+    font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+h1 {
+    color: #00559F /* [[$blue]] */;;
+    margin: 10px 0;
+    font-size: 28px;
+    text-transform: uppercase;
+}
+h2 {
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    font-size: 22px
+}
+h3 {
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    font-weight: 300;
+    font-size: 18px
+}
+/* blockquotes and cites */
+blockquote,
+blockquote p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    font-style: italic;
+    font-family: Georgia, Times New Roman, serif
+}
+blockquote {
+    margin: 0 0 20px 0;
+    padding: 9px 10px 10px 19px;
+    border-left: 5px solid #D0D0D0 /* [[$light_grey]] */;
+}
+blockquote cite {
+    display: block;
+    font-size: 12px;
+    color: #9c9c9c; /*[[$dark_grey]]*/
+}
+blockquote cite:before {
+    content: "\2014 \0020";
+}
+blockquote cite a,
+blockquote cite a:visited,
+blockquote cite a:visited {
+    font-family: Georgia, Times New Roman, serif;
+}
+
+/* =====================================
+LAYOUT
+===================================== */
+/* wrapping the page in a box */
+#wrapper {
+    margin-top: 10px;
+    border: 0px solid #D0D0D0; /* [[$light_gray]] */
+}
+/* you can switch appearance of the page by adding or removing id #boxed to body tag */
+#boxed #wrapper {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 10px #9c9c9c; /*[[$dark_grey]]*/;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+/* ------ HEADER SECTION ------ */
+/* if you need height or something for header part add style here */
+.header {
+
+}
+/* the logo */
+.logo {
+    margin-top: 0px;
+    margin-left: 0px;
+    /*width: 140px;*/
+    height: 140px;
+    position: relative;
+    background: url(../img/SGGNlogo140.png) no-repeat;
+}
+/* having some fun with palm, rotating with css3, will not work in IE */
+.logo .sggn {
+    position: absolute;
+    top: 5px;
+    left: 45px;
+    /* using sprite image as background, left as reference to single image
+    background: url(img/palm-circle.png) no-repeat;
+    */
+    display: block;
+    width: 48px;
+    height: 48px;
+    transition: transform 0.6s ease-out;
+    -webkit-transition: -webkit-transform 0.6s ease-out;
+    -moz-transition: -moz-transform 0.6s ease-out;
+    -o-transition: -o-transform 0.6s ease-out;
+    -webkit-perspective: 1000;
+    -webkit-backface-visibility: hidden;
+}
+/* css3 transform rotating palm on hover */
+.logo a:hover .palm {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg)
+}
+.top .header {
+    border-bottom: 5px solid #00559F /* [[$blue]] */;;
+    padding: 0 0 10px 0;
+}
+
+/* ------ NAVIGATION ------ */
+
+/* first level */
+nav.main-navigation {
+    z-index: 990;
+    height: 55px;
+    line-height: 37px;
+    margin-top: 20px;
+}
+nav.main-navigation > ul {
+    float:right;
+    padding: 0
+}
+nav.main-navigation > ul > li {
+    float: left;
+    padding: 0;
+    margin:0 12px;
+    position: relative
+}
+nav.main-navigation > ul > li:first-child,
+nav.main-navigation > ul > li.first {
+    margin-left: 0
+}
+nav.main-navigation > ul > li:last-child,
+nav.main-navigation > ul > li.last {
+    margin-right: 0
+}
+nav.main-navigation > ul > li > a,
+nav.main-navigation > ul > li.sectionheader span {
+    font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase
+}
+/* Second Level */
+nav.main-navigation ul li ul {
+    top: -999em;
+    left: -999em;
+    position: absolute;
+    display: block;
+    height: 0px;
+    width: 200px;
+    padding: 10px;
+    background: #FFFFFF;
+    background: rgba(255,255,255,.8);
+    box-shadow: 1px 1px 8px #9c9c9c; /*[[$dark_grey]]*/;
+    -webkit-box-shadow: 1px 1px 8px #9c9c9c; /*[[$dark_grey]]*/;
+    -moz-box-shadow: 1px 1px 8px #9c9c9c; /*[[$dark_grey]]*/;
+    -o-box-shadow: 1px 1px 8px #9c9c9c; /*[[$dark_grey]]*/;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -o-border-radius: 6px;
+    border: 1px solid #9C9C9C; /* [[$grey]] */
+}
+nav.main-navigation > ul > li:hover > ul {
+    height: auto;
+    z-index: 9999;
+    top: 37px;
+    right: 0;
+    left: auto;
+    display: block
+}
+nav.main-navigation ul ul li {
+    position: relative;
+    line-height: 1;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px dotted #9C9C9C; /* [[$grey]] */
+}
+/* third level */
+nav.main-navigation > ul > li > ul > li:hover > ul {
+    height: auto;
+    top: 0;
+    right: auto;
+    left: -210px;
+    z-index: 999;
+    display: block
+}
+/* navigation text color */
+nav.main-navigation ul li li a,
+nav.main-navigation ul li li.sectionheader span {
+    padding: 6px 12px;
+    font-family: sans-serif;
+    text-transform: none;
+    font-weight: normal;
+    font-size: 12px;
+    text-decoration: none;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    display: block
+}
+nav.main-navigation a:hover,
+nav.main-navigation a.current,
+nav.main-navigation li.sectionheader span:hover,
+nav.main-navigation li.sectionheader span.current,
+nav.main-navigation li.sectionheader span.parent,
+nav.main-navigation ul ul li a:hover,
+nav.main-navigation ul ul li a.current {
+    color: #00559F /* [[$blue]] */;
+}
+/* bottom part of header*/
+.header-bottom {
+    height: 55px;
+    line-height: 55px
+}
+/* catchphrase */
+.phrase span {
+    font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    font-size: 36px;
+    font-weight: 700
+}
+/* search */
+.search {
+    text-align: right;
+}
+/* webkit browser add icons to input of type search, we dont want it here now */
+input.search-input::-webkit-search-decoration,
+input.search-input::-webkit-search-results-button,
+input.search-input::-webkit-search-results-decoration {
+    -webkit-appearance:none
+}
+/* styling the search input field */
+input.search-input {
+    border: 1px solid #D0D0D0 /* [[$light_grey]] */;;
+    height: 17px;
+    line-height: 17px;
+    outline: 0;
+    margin: 10px 0 0 0;
+    width: 165px;
+    padding: 5px 0 3px 35px;
+    font-size: 11px;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    transition: all .35s ease-in-out;
+    -webkit-transition: all .35s ease-in-out;
+    -moz-transition: all .35s ease-in-out;
+    -o-transition: all .35s ease-in-out;
+    /* using sprite image, left as reference to single image
+    background: #FFFFFF url(img/search-icon.png) 10px 50% no-repeat
+    */
+    background: #FFFFFF url(img/simplex-sprite.png) 0px -434px no-repeat
+}
+input.search-input:focus {
+    border: 1px solid #00559F /* [[$blue]] */;;
+    width: 240px;
+    box-shadow: 0 0 3px #00559F /* [[$blue]] */;;
+    -webkit-box-shadow: 0 0 3px #00559F /* [[$blue]] */;;
+    -moz-box-shadow: 0 0 3px #00559F /* [[$blue]] */;;
+    -o-box-shadow: 0 0 3px #00559F /* [[$blue]] */;;
+}
+/* ------- MENUBANNER --------- */
+.menubanner {
+    overflow: hidden;
+    background: #00559F /* [[$blue]] */;;
+    color: #FFF;
+    font-weight: bold;
+    padding: 2px;
+}
+.menubanner {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+/* the logo */
+.homeicon {
+    margin:0px;
+    padding: 0px;
+}
+.menubannerlinks ul {
+    list-style-type: none;
+}
+.menubannerlinks ul li {
+    float:right;
+    margin:0px 0px 0px 15px;
+}
+.menubannerlinks a {
+	color: #FFF;
+}
+/* ------ BANNER AREA ------ */
+.banner {
+    overflow: hidden;
+    background: #00559F /* [[$blue]] */;
+}
+/* left text in blue box */
+.banner-text {
+    padding:0 0 0 1%;
+    position: relative;
+    float: left;
+    width: 30.333%
+}
+.banner-text ul {
+    padding:0;
+}
+.banner-text li {
+    list-style: none;
+    display: block;
+    color: #E95E27 /* [[$orangered]] */;;
+    text-shadow: 0px 1px 0 #D0D1D2  0 -1px 0 rgba(0,0,0,0.3); /* [[$yellow]] */
+    font-size: 36px;
+    font-weight: 700;
+    transition: all 2s linear;
+    -webkit-transition: all 1.5s linear;
+    -moz-transition: all 1.5s linear;
+    -o-transition: all 1.5s linear;
+    display: block
+}
+/* animating unordered list text in banner */
+.banner-text li:hover {
+    text-indent: 120px;
+    opacity: 0;
+    transform: scale(2) rotate(35deg);
+    -webkit-transform: scale(2) rotate(35deg);
+    -moz-transform: scale(2) rotate(35deg);
+    -o-transform: scale(2) rotate(35deg)
+}
+/* images on the right */
+.banner-image {
+    float:right;
+    display: block;
+    position: relative;
+    width: 67.667%;
+    overflow: hidden;
+    background: #9C9C9C; /* [[$grey]] */
+}
+.banner-image div {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+    display: block;
+    top: 0;
+    left: 0
+}
+.banner-image img {
+    display: block;
+	height: auto;
+    width: 100%;
+    bottom: 0;
+    max-width: 100%;
+}
+/* ------ CONTENT AREA ------ */
+.content-wrapper {
+    padding-top: 20px
+}
+.content-top {
+    background: url(img/dots.gif) repeat-x 0 50%;
+    font-family: Georgia, Times New Roman, serif;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    font-style: italic;
+    line-height: 20px
+}
+
+/* breadcrumbs */
+.breadcrumb {
+    display: inline-block;
+    background: #FFFFFF;
+    width: auto;
+    padding-right: 6px
+}
+.breadcrumb a {
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    display: inline-block;
+    width: auto;
+    background: #FFFFFF
+}
+
+/* print button */
+a.printbutton {
+    display: block;
+    padding-left: 6px;
+    width: 16px;
+    height: 16px;
+    float:right;
+    text-indent: -999em;
+    /* using sprite image, left as reference to single image
+    background: #FFFFFF url(img/print-icon.png) no-repeat 6px -16px;
+    */
+    background: #FFFFFF url(img/simplex-sprite.png) no-repeat -4px -94px;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out
+}
+a.printbutton:hover {
+    /* using sprite image, left as reference to single image
+    background: #FFFFFF url(img/print-icon.png) no-repeat 6px 0;
+    */
+    background: #FFFFFF url(img/simplex-sprite.png) no-repeat -4px -78px;
+}
+
+/* news module summary -> content */
+.content .news-summary  span.heading {
+    display: none
+}
+.content .news-article {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dotted #9C9C9C; /* [[$grey]] */
+}
+.content .news-summary ul.category-list {
+    margin: 15px 0
+}
+.content .news-summary ul.category-list li a,
+.news-summary ul.category-list li span {
+    border-radius: 4px
+}
+.news-summary ul.category-list li span {
+    opacity: .4
+}
+/* news module summary -> sitewide (content + sidebar) */
+/* article heading */
+.news-article h2 {
+    margin: 0 0 15px 0
+}
+.news-article h2 a {
+    font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: 700
+}
+/* date circle, well square for IE  */
+.news-article .date {
+    background: #00559F /* [[$blue]] */;;
+    color: #FFFFFF;
+    display: block;
+    float:left;
+    width: 40px;
+    padding: 6px;
+    height: 40px;
+    border-radius: 26px;
+    text-align: center;
+    font-family: Georgia, Times New Roman, serif
+}
+.news-article .day {
+    font-size: 20px;
+    line-height: 1;
+    padding-bottom: 2px;
+    font-style: italic;
+    display: block
+}
+.news-article.month {
+    font-size: 11px;
+    display: block
+}
+/* author and category */
+.news-article .author,
+.news-article .category {
+    font-family: Georgia, Times New Roman, serif;
+    display: block;
+    padding-left: 60px;
+    font-size: 11px;
+    font-style: italic
+}
+/* category list on top of summary */
+.news-summary ul.category-list {
+    margin:15px 0 0 0;
+    padding:0;
+    list-style: none
+}
+.news-summary ul.category-list li {
+    float:left;
+    display: block;
+    width: auto;
+    margin-right: 5px
+}
+.news-summary ul.category-list li a,
+.news-summary ul.category-list li span {
+    display: block;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    padding: 4px 8px;
+    background: #D0D0D0 /* [[$light_grey]] */;;
+    border-radius: 4px 4px 0 0;
+    text-decoration: none;
+    font-size: 11px;
+    text-transform: uppercase
+}
+.news-summary ul.category-list li a:hover {
+    color: #00559F /* [[$blue]] */;
+}
+.news-summary .paginate {
+    font: italic 11px/1.2 Georgia, Times New Roman, serif;
+
+}
+.news-summary .paginate a {
+    padding: 0 3px;
+}
+.news-meta {
+    background: #D0D0D0 /* [[$light_grey]] */;;
+    padding: 10px;
+    margin: 10px 0
+}
+/* more link */
+.more,
+.more a,
+/* back link */
+.back,
+.back a,
+/* previous, next links */
+.previous a,
+.next a,
+.previous,
+.next {
+    font:  italic 12px/1.3 Georgia, Times New Roman, serif;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    text-decoration: none
+}
+/* hover behavior of more, next, previous links */
+.more a:hover,
+.back a:hover,
+.previous a:hover,
+.next a:hover {
+    text-decoration: underline
+}
+.previous,
+.next {
+    padding: 6px 0;
+}
+/* align next link to right */
+.previous {
+    float:left;
+}
+.next {
+    float: right
+}
+
+/* ------ SIDEBAR AREA ------ */
+
+/* news module summary -> sidebar */
+.sidebar .news-summary  span.heading {
+    background: url(img/dots.gif) repeat-x 0 50%;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    font:  normal 16px/20px Georgia, Times New Roman, serif;
+    margin: 0 0 15px 0;
+    display: block
+}
+.sidebar .news-summary .heading span {
+    display: inline-block;
+    width: auto;
+    background: #FFFFFF;
+    padding-right: 6px
+}
+.sidebar .news-article {
+    padding: 15px;
+    position: relative;
+    background: #D0D0D0 /* [[$light_grey]] */;;
+    margin-bottom: 20px;
+    border-radius: 0 0 6px 0
+}
+/* creating a bubble box with css3 */
+.sidebar .news-article:before {
+    content:'';
+    position: absolute;
+    bottom: -15px;
+    right: 25px;
+    width: 10px;
+    height: 35px;
+    -webkit-transform: rotate(55deg) skewY(55deg);
+    -moz-transform: rotate(55deg) skewY(55deg);
+    -o-transform: rotate(55deg) skewY(55deg);
+    -ms-transform: rotate(55deg) skewY(55deg);
+    transform: rotate(55deg) skewY(55deg);
+    background: #D0D0D0 /* [[$light_grey]] */;
+}
+
+/* ------ FOOTER AREA ------ */
+/* footer wrapper */
+.footer {
+    position: relative;
+    background: transparent url(img/footer-background.png) repeat-x top;
+    border-bottom: 1px dotted #9C9C9C; /* [[$grey]] */;
+    margin: 25px 0 10px 0;
+    padding: 20px 0
+}
+/* copyright text */
+.copyright {
+    padding-top: 15px
+}
+.copyright p,
+.copyright a {
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    font-size: 11px
+}
+/* social icons */
+.footer ul.social {
+    padding: 0;
+    margin: 0
+}
+.footer .social li {
+    float:left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-right: 6px
+}
+.footer .social li a {
+    display: block;
+    width: 24px;
+    height: 24px;
+    transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    text-indent: -999em
+}
+.footer .social li.facebook a {
+    /* using sprite image, left as reference to single image
+    background: transparent url(img/facebook-icon.png) no-repeat 0 -24px
+    */
+    background: transparent url(img/simplex-sprite.png) no-repeat -10px -260px
+}
+.footer .social li.facebook a:hover {
+    /* using sprite image, left as reference to single image
+    background: transparent url(img/facebook-icon.png) no-repeat 0 0
+    */
+    background: transparent url(img/simplex-sprite.png) no-repeat -10px -236px
+}
+.footer .social li.twitter a {
+    /* background: transparent url(img/twitter-icon.png) no-repeat 0 -24px */
+    background: transparent url(img/simplex-sprite.png) no-repeat -10px -192px
+}
+.footer .social li.twitter a:hover {
+    /* background: transparent url(img/twitter-icon.png) no-repeat 0 0 */
+    background: transparent url(img/simplex-sprite.png) no-repeat -10px -168px
+}
+.footer .social li.linkedin a {
+    /* background: transparent url(img/linkedin-icon.png) no-repeat 0 -24px */
+    background: transparent url(img/simplex-sprite.png) no-repeat -10px -328px
+}
+.footer .social li.linkedin a:hover {
+	/*  background: transparent url(img/linkedin-icon.png) no-repeat 0 0 */
+	background: transparent url(img/simplex-sprite.png) no-repeat -10px -304px
+}
+.footer .social li.youtube a {
+    /* background: transparent url(img/youtube-icon.png) no-repeat 0 -24px */
+    background: transparent url(img/simplex-sprite.png) no-repeat -10px -396px
+}
+.footer .social li.youtube a:hover {
+    /* background: transparent url(img/youtube-icon.png) no-repeat 0 0 */
+    background: transparent url(img/simplex-sprite.png) no-repeat -10px -372px
+}
+/* back to top anchor */
+.back-top a {
+    display: inline-block;
+    width: auto;
+    padding: 8px;
+    border-left: 5px solid #FFFFFF;
+    border-right: 5px solid #FFFFFF;
+    font:  normal italic 11px/20px Georgia, Times New Roman, serif;
+    text-decoration: none;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    background: #D0D0D0 /* [[$light_grey]] */;;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    border-radius: 10px 0 10px 0;
+    -webkit-border-radius: 10px 0 10px 0;
+    -moz-border-radius: 10px 0 10px 0;
+    -o-border-radius: 10px 0 10px 0;
+    position: absolute;
+    top: -14px;
+    left: 48%
+}
+/* Footer navigation */
+.footer-navigation {
+    padding-top: 15px
+}
+.footer-navigation > ul > li {
+    float:left;
+    width: 32.333%
+}
+.footer-navigation > ul > li > a,
+.footer-navigation > ul > li span.sectionheader {
+    font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    color: #9c9c9c; /*[[$dark_grey]]*/;
+    text-decoration: none;
+    display: block
+}
+/* second level */
+.footer-navigation > ul ul {
+    margin-top: 10px
+}
+.footer-navigation > ul > li li {
+    float: none;
+    width: 100%;
+    display: block
+}
+.footer-navigation > ul > li li a,
+.footer-navigation > ul > li.sectionheader li a,
+.footer-navigation > ul > li li span.sectionheader  {
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: normal;
+    text-transform: none;
+    display: block;
+    padding: 2px 0;
+    color: #9c9c9c; /*[[$dark_grey]]*/
+}
+.footer-navigation > ul > li li a:hover {
+    color: #00559F /* [[$blue]] */;
+}
+
+/* [[/strip]] */

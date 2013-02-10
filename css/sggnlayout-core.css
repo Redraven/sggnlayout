@@ -1,141 +1,141 @@
-[[strip]][[* using strip in stylesheet to remove unneeded empty space, will reduce the file size *]]
+/* [[strip]][[* using strip in stylesheet to remove unneeded empty space, will reduce the file size *]] */
 /* =====================================
 BASE STYLES
 ===================================== */
-article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { 
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
     display: block
 }
 /* taken from HTML5 Boilerplate http://h5bp.com */
-html { 
-    font-size: 100%; 
-    -webkit-text-size-adjust: 100%; 
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%
 }
-audio, canvas, video { 
-    display: inline-block; 
-    *display: inline; 
+audio, canvas, video {
+    display: inline-block;
+    *display: inline;
     *zoom: 1
 }
-audio:not([controls]) { 
+audio:not([controls]) {
     display: none
 }
-[hidden] { 
+[hidden] {
     display: none
 }
 /* text selection */
-.content-wrapper ::-moz-selection { 
+.content-wrapper ::-moz-selection {
     background: #f39c2c;
     background: rgba(243,156,44,0.7);
     color: #555;
     text-shadow: none
 }
-.content-wrapper ::selection { 
-    background: #f39c2c; 
+.content-wrapper ::selection {
+    background: #f39c2c;
     background: rgba(243,156,44,0.7);
     color: #555;
-    text-shadow: none 
+    text-shadow: none
 }
 /* Consistent box sizing and appearance */
-input[type="checkbox"], input[type="radio"] { 
-    box-sizing: border-box; 
-    padding: 0; 
-    *width: 13px; 
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+    *width: 13px;
     *height: 13px
 }
-input[type="search"] { 
-    -webkit-appearance: textfield; 
-    -moz-box-sizing: content-box; 
-    -webkit-box-sizing: content-box; 
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
     box-sizing: content-box
 }
-input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button { 
+input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none
 }
 /* Remove inner padding and border in FF3/4 */
-button::-moz-focus-inner, input::-moz-focus-inner { 
-    border: 0; 
+button::-moz-focus-inner, input::-moz-focus-inner {
+    border: 0;
     padding: 0
 }
 /*
  * 1. Remove default vertical scrollbar in IE6/7/8/9
  * 2. Allow only vertical resizing
  */
-textarea { 
-    overflow: auto; 
-    vertical-align: top; 
+textarea {
+    overflow: auto;
+    vertical-align: top;
     resize: vertical
 }
-ul, ol { 
-    margin: 1em 0; 
+ul, ol {
+    margin: 1em 0;
     padding: 0 0 0 40px
 }
-dd { 
+dd {
     margin: 0 0 0 40px
 }
-nav ul, nav ol { 
-    list-style: none; 
-    list-style-image: none; 
-    margin: 0; 
+nav ul, nav ol {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
     padding: 0
 }
 /* Redeclare monospace font family */
-pre, code, kbd, samp { 
-    font-family: monospace, serif; _font-family: 'courier new', monospace; 
+pre, code, kbd, samp {
+    font-family: monospace, serif; _font-family: 'courier new', monospace;
     font-size: 1em }
 /* Improve readability of pre-formatted text in all browsers */
-pre { 
+pre {
     white-space: pre;
-    white-space: pre-wrap; 
+    white-space: pre-wrap;
     word-wrap: break-word
 }
-q { 
+q {
     quotes: none
 }
-q:before, q:after { 
-    content: ""; 
+q:before, q:after {
+    content: "";
     content: none
 }
-small { 
+small {
     font-size: 85%
 }
 /* Hide from both screenreaders and browsers */
-.hidden { 
-    display: none !important; 
+.hidden {
+    display: none !important;
     visibility: hidden
 }
 /* Hide only visually, but have it available for screenreaders */
-.visuallyhidden { 
-    border: 0; 
-    clip: rect(0,0,0,0); 
-    height: 1px; 
-    margin: -1px; 
-    overflow: hidden; 
-    padding: 0; 
-    position: absolute; 
+.visuallyhidden {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
     width: 1px
 }
 /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard */
-.visuallyhidden.focusable:active, 
-.visuallyhidden.focusable:focus { 
-    clip: auto; 
-    height: auto; 
-    margin: 0; 
-    overflow: visible; 
-    position: static; 
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
     width: auto
 }
 /* Hide visually and from screenreaders, but maintain layout */
-.invisible { 
+.invisible {
     visibility: hidden
 }
 /* correct text resizing */
-html { 
-    font-size: 100%; 
-    -webkit-text-size-adjust: 100%; 
-    -ms-text-size-adjust: 100% 
+html {
+    font-size: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%
 }
-body { 
-    margin: 0; 
+body {
+    margin: 0;
     font-size: 1em;
    /* -webkit-font-smoothing: antialiased */
 }
@@ -180,7 +180,7 @@ Desktop
 	float: left;
 	position: relative;
 	margin-left: .96%;
-	margin-right: .96%   
+	margin-right: .96%
 }
 
 /* alpha and omega classes remove margins, aplha = no margin left, omega = no margin right */
@@ -254,26 +254,26 @@ Desktop
 .container .pull_11 { left:-91.667% }
 
 /* =====================================
-Tablet (Portrait) 
+Tablet (Portrait)
 ===================================== */
 @media only screen and (min-width: 768px) and (max-width: 1024px) and (orientation : portrait) {
     .container {
         width: 92%;
         min-width: 768px;
         max-width: 1024px
-    } 
+    }
 }
 
 /* =====================================
-Smartphones (Portait) 
+Smartphones (Portait)
 ===================================== */
 @media only screen and (max-width: 320px) {
     .container {
         width: 92%;
         min-width: 300px;
         max-width: 320px
-    } 
-    .container .grid_1, 
+    }
+    .container .grid_1,
     .container .grid_2,
     .container .grid_3,
     .container .grid_4,
@@ -284,23 +284,23 @@ Smartphones (Portait)
     .container .grid_9,
     .container .grid_10,
     .container .grid_11,
-    .container .grid_12 { 
-        width: 98%;  
+    .container .grid_12 {
+        width: 98%;
         margin: 0 1%;
         float: none
     }
 }
 
 /* =====================================
-Smartphones (Landscape) 
+Smartphones (Landscape)
 ===================================== */
 @media only screen and (min-width: 321px) and (max-width: 767px) {
     .container {
         width: 92%;
         min-width: 321px;
         max-width: 767px
-    } 
-    .container .grid_1, 
+    }
+    .container .grid_1,
     .container .grid_2,
     .container .grid_3,
     .container .grid_4,
@@ -311,16 +311,16 @@ Smartphones (Landscape)
     .container .grid_9,
     .container .grid_10,
     .container .grid_11,
-    .container .grid_12 { 
+    .container .grid_12 {
         width: 98%;
         margin: 0 1%;
         display: block;
         float: none
-    }    
+    }
 }
 
 /* =====================================
-Smartphones (Portrait & Landscape) 
+Smartphones (Portrait & Landscape)
 ===================================== */
 @media only screen and (min-width: 300px) and (max-width: 767px) {
     .container .prefix_1,
@@ -344,10 +344,10 @@ Smartphones (Portrait & Landscape)
     .container .suffix_8,
     .container .suffix_9,
     .container .suffix_10,
-    .container .suffix_11 { 
+    .container .suffix_11 {
         padding-right: 0;
         padding-left: 0
-    } 
+    }
     .container .push_1,
     .container .push_2,
     .container .push_3,
@@ -396,20 +396,20 @@ CLEARING FLOATS
 	height: 0
 }
 
-.cf:before, 
+.cf:before,
 .cf:after,
 .row:before,
-.row:after{ 
-    content: ""; 
+.row:after{
+    content: "";
     display: table
 }
 .cf:after,
-.row:after{ 
+.row:after{
     clear: both
 }
 .cf,
-.row { 
+.row {
     *zoom: 1
 }
 
-[[/strip]]
+/*[[/strip]]*/
