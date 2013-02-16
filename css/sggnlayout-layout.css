@@ -236,35 +236,14 @@ LAYOUT
     margin-top: 0px;
     margin-left: 0px;
     /*width: 140px;*/
-    height: 140px;
     position: relative;
-    background: url(../img/SGGNlogo140.png) no-repeat;
 }
 /* having some fun with palm, rotating with css3, will not work in IE */
-.logo .sggn {
-    position: absolute;
-    top: 5px;
-    left: 45px;
-    /* using sprite image as background, left as reference to single image
-    background: url(img/palm-circle.png) no-repeat;
-    */
-    display: block;
-    width: 48px;
-    height: 48px;
-    transition: transform 0.6s ease-out;
-    -webkit-transition: -webkit-transform 0.6s ease-out;
-    -moz-transition: -moz-transform 0.6s ease-out;
-    -o-transition: -o-transform 0.6s ease-out;
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
+.sggn {
+    background: url(../img/SGGNlogo212x212.png) no-repeat;
+    height: 212px;
 }
-/* css3 transform rotating palm on hover */
-.logo a:hover .palm {
-    transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg)
-}
+
 .top .header {
     border-bottom: 5px solid #00559F /* [[$blue]] */;;
     padding: 0 0 10px 0;
@@ -275,7 +254,8 @@ LAYOUT
 /* first level */
 nav.main-navigation {
     z-index: 990;
-    height: 55px;
+    /*height: 55px;*/
+	 font-size: 1.1em;
     line-height: 37px;
     margin-top: 20px;
 }
@@ -378,12 +358,19 @@ nav.main-navigation ul ul li a.current {
     height: 55px;
     line-height: 55px
 }
+.sitename span {
+	 font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-transform: uppercase;
+    color: #00559F; /*[[$blue]]*/;
+    font-size: 3.1em;
+    font-weight: 700
+}
 /* catchphrase */
 .phrase span {
     font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     color: #9c9c9c; /*[[$dark_grey]]*/;
-    font-size: 36px;
+    font-size: 1.1em;
     font-weight: 700
 }
 /* search */
