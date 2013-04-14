@@ -87,7 +87,7 @@ code, samp, kbd {
 }
 pre code {
     line-height: 1.4;
-    font-size: 11px
+    font-size: 0.6875em
 }
 pre {
     padding: 10px;
@@ -169,22 +169,22 @@ h3 {
 h1 {
     color: #00559F /* [[$blue]] */;;
     margin: 10px 0;
-    font-size: 28px;
+    font-size: 1.75em;
     text-transform: uppercase;
 }
 h2 {
     color: #9c9c9c; /*[[$dark_grey]]*/;
-    font-size: 22px
+    font-size: 1.375em
 }
 h3 {
     color: #9c9c9c; /*[[$dark_grey]]*/;
     font-weight: 300;
-    font-size: 18px
+    font-size: 1.125em
 }
 /* blockquotes and cites */
 blockquote,
 blockquote p {
-    font-size: 14px;
+    font-size: 0.875em;
     line-height: 1.5;
     color: #9c9c9c; /*[[$dark_grey]]*/;
     font-style: italic;
@@ -197,7 +197,7 @@ blockquote {
 }
 blockquote cite {
     display: block;
-    font-size: 12px;
+    font-size: 0.75em;
     color: #9c9c9c; /*[[$dark_grey]]*/
 }
 blockquote cite:before {
@@ -234,7 +234,8 @@ LAYOUT
 /* the logo */
 .logo {
     margin-top: 0px;
-    margin-left: 0px;
+    margin-left: auto;
+    margin-right: auto;
     /*width: 140px;*/
     position: relative;
 }
@@ -282,7 +283,7 @@ nav.main-navigation > ul > li.sectionheader span {
     font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: #9c9c9c; /*[[$dark_grey]]*/;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 0.875em;
     font-weight: 600;
     cursor: pointer;
     text-transform: uppercase
@@ -297,7 +298,7 @@ nav.main-navigation ul li ul {
     width: 200px;
     padding: 10px;
     background: #FFFFFF;
-    background: rgba(255,255,255,.8);
+    background: rgba(255,255,255,1.0);
     box-shadow: 1px 1px 8px #9c9c9c; /*[[$dark_grey]]*/;
     -webkit-box-shadow: 1px 1px 8px #9c9c9c; /*[[$dark_grey]]*/;
     -moz-box-shadow: 1px 1px 8px #9c9c9c; /*[[$dark_grey]]*/;
@@ -339,7 +340,7 @@ nav.main-navigation ul li li.sectionheader span {
     font-family: sans-serif;
     text-transform: none;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 0.75em;
     text-decoration: none;
     color: #9c9c9c; /*[[$dark_grey]]*/;
     display: block
@@ -392,7 +393,7 @@ input.search-input {
     margin: 10px 0 0 0;
     width: 165px;
     padding: 5px 0 3px 35px;
-    font-size: 11px;
+    font-size: 0.6875em;
     color: #9c9c9c; /*[[$dark_grey]]*/;
     transition: all .35s ease-in-out;
     -webkit-transition: all .35s ease-in-out;
@@ -459,7 +460,7 @@ input.search-input:focus {
     display: block;
     color: #E95E27 /* [[$orangered]] */;;
     text-shadow: 0px 1px 0 #D0D1D2  0 -1px 0 rgba(0,0,0,0.3); /* [[$yellow]] */
-    font-size: 36px;
+    font-size: 2.25em;
     font-weight: 700;
     transition: all 2s linear;
     -webkit-transition: all 1.5s linear;
@@ -580,7 +581,7 @@ a.printbutton:hover {
     font-family: 'Oswald', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-transform: uppercase;
     color: #9c9c9c; /*[[$dark_grey]]*/;
-    font-size: 16px;
+    font-size: 1em;
     text-decoration: none;
     font-weight: 700
 }
@@ -598,14 +599,14 @@ a.printbutton:hover {
     font-family: Georgia, Times New Roman, serif
 }
 .news-article .day {
-    font-size: 20px;
+    font-size: 1.25em;
     line-height: 1;
     padding-bottom: 2px;
     font-style: italic;
     display: block
 }
 .news-article.month {
-    font-size: 11px;
+    font-size: 0.6875em;
     display: block
 }
 /* author and category */
@@ -614,7 +615,7 @@ a.printbutton:hover {
     font-family: Georgia, Times New Roman, serif;
     display: block;
     padding-left: 60px;
-    font-size: 11px;
+    font-size: 0.6875;
     font-style: italic
 }
 /* category list on top of summary */
@@ -637,7 +638,7 @@ a.printbutton:hover {
     background: #D0D0D0 /* [[$light_grey]] */;;
     border-radius: 4px 4px 0 0;
     text-decoration: none;
-    font-size: 11px;
+    font-size: 0.6875;
     text-transform: uppercase
 }
 .news-summary ul.category-list li a:hover {
@@ -732,7 +733,6 @@ a.printbutton:hover {
 /* footer wrapper */
 .footer {
     position: relative;
-    background: transparent url(img/footer-background.png) repeat-x top;
     border-bottom: 1px dotted #9C9C9C; /* [[$grey]] */;
     margin: 25px 0 10px 0;
     padding: 20px 0
@@ -744,7 +744,7 @@ a.printbutton:hover {
 .copyright p,
 .copyright a {
     color: #9c9c9c; /*[[$dark_grey]]*/;
-    font-size: 11px
+    font-size: 0.6875
 }
 /* social icons */
 .footer ul.social {

@@ -36,7 +36,7 @@ nav.main-navigation ul li {
 }
 nav.main-navigation > ul > li > a,
 nav.main-navigation > ul > li.sectionheader > span {
-    font-size: 12px;
+    font-size: 0.75em;
     line-height: 28px;
 }
 /* second level navigation */
@@ -128,7 +128,7 @@ Tablet (Portrait)
     }
     nav.main-navigation > ul > li > a,
     nav.main-navigation > ul > li.sectionheader > span {
-        font-size: 14px
+        font-size: 0.875em
     }
     .header-bottom {
         height: auto;
@@ -152,7 +152,7 @@ Smartphones (Landscape)
     }
     nav.main-navigation > ul > li > a
     nav.main-navigation > ul > li.sectionheader > span {
-        font-size: 10px
+        font-size: 0.625em
     }
 }
 
@@ -183,7 +183,7 @@ Smartphones (Portait)
     }
     nav.main-navigation > ul > li > a,
     nav.main-navigation > ul > li.sectionheader span {
-        font-size: 20px
+        font-size: 1.25em
     }
     /* search box */
     .grid_5.search {
