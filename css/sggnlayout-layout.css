@@ -232,19 +232,15 @@ LAYOUT
 
 }
 /* the logo */
-.logo {
+.logo-img {
     margin-top: 0px;
     margin-left: auto;
     margin-right: auto;
-    /*width: 140px;*/
+    width: 212px;/* remember to mach image */
     position: relative;
-}
-/* having some fun with palm, rotating with css3, will not work in IE */
-.sggn {
-    background: url(../img/SGGNlogo212x212.png) no-repeat;
+	background: url(../img/SGGNlogo212x212.png) no-repeat;
     height: 212px;
 }
-
 .top .header {
     border-bottom: 5px solid #00559F /* [[$blue]] */;;
     padding: 0 0 10px 0;
@@ -257,8 +253,8 @@ nav.main-navigation {
     z-index: 990;
     /*height: 55px;*/
 	 font-size: 1.1em;
-    line-height: 37px;
-    margin-top: 20px;
+    line-height: 2em;
+    margin-top: 0px;
 }
 nav.main-navigation > ul {
     float:right;
@@ -727,6 +723,11 @@ a.printbutton:hover {
     -ms-transform: rotate(55deg) skewY(55deg);
     transform: rotate(55deg) skewY(55deg);
     background: #D0D0D0 /* [[$light_grey]] */;
+}
+
+/* ------ Main content ----- */
+.maincontent {
+	margin-top: -70px;
 }
 
 /* ------ FOOTER AREA ------ */

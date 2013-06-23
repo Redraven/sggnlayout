@@ -154,12 +154,15 @@ Smartphones (Landscape)
     nav.main-navigation > ul > li.sectionheader > span {
         font-size: 0.625em
     }
+	.sitename span {
+		display: none;
+	}
 }
 
 /* =====================================
 Smartphones (Portait)
 ===================================== */
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 10) and (max-width: 320px) {
     .logo img {
         margin: 20px auto
     }
@@ -204,6 +207,9 @@ Smartphones (Portait)
     .footer .copyright {
         text-align: center
     }
+	.sitename span {
+		display: none;
+	}
 }
 
 /* [[/strip]] */
